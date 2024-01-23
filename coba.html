@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Search Engine</title>
+</head>
+<body>
+
+<h1>Ceritanya Search Engine</h1>
+
+<form action="#" method="get" id="search-form">
+    <label for="search-query">Search:</label>
+    <input type="text" id="search-query" name="q" required>
+    <button type="submit">Search</button>
+</form>
+
+<div id="search-results">
+    <!-- Hasil pencarian akan ditampilkan di sini -->
+</div>
+
+<script>
+document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var searchQuery = document.getElementById('search-query').value;
+    var searchResults = document.getElementById('search-results');
+
+    // Ganti URL dengan URL masing-masing situs
+    var site1URL = "https://www.situs1.com/search?q=" + encodeURIComponent(searchQuery);
+    var site2URL = "https://www.situs2.com/search?q=" + encodeURIComponent(searchQuery);
+    var site3URL = "https://www.situs3.com/search?q=" + encodeURIComponent(searchQuery);
+    var site4URL = "https://www.situs4.com/search?q=" + encodeURIComponent(searchQuery);
+
+    // Tambahkan link hasil pencarian ke div hasil
+    searchResults.innerHTML = `
+        <p><a href="${site1URL}" target="_blank">Situs 1</a></p>
+        <p><a href="${site3URL}" target="_blank">Situs 3</a></p>
+        <p><a href="${site4URL}" target="_blank">Situs 4</a></p>
+        <p><a href="${site2URL}" target="_blank">Situs 2</a></p>
+    `;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+void hey()
+{
+    cout << "hey";
+}
